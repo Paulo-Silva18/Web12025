@@ -1,6 +1,6 @@
 <HTML>
 	<HEAD>
-		<TITLE> Listagem de Contatos </TITLE>
+		<TITLE> Listagem de Itens </TITLE>
 		<META charset="UTF-8" />
 	</HEAD>
 	<BODY>
@@ -14,9 +14,9 @@
 		<TABLE border="1px">
 			<TR> 
 				<TH> ID </TH>
-				<TH> Nome </TH>
-				<TH> Email </TH>
-				<TH> Telefone </TH>	
+				<TH> Nome do Produto </TH>
+				<TH> Descrição </TH>
+				<TH> Preço </TH>	
 				<TH> <img src="visao/img/update.png" width='30px' /> </TH>
 				<TH> <img src="visao/img/delete.png" width='30px' /> </TH>
 			</TR>
@@ -29,11 +29,11 @@
 					echo "<TD>" . $c->getId() . "</TD>";
 					
 					echo "<TD><A href='contato.php?fun=exibir&id=". $c->getId() . 
-					      "'>" . $c->getNome() . "</A></TD>";
+					      "'>" . $c->getNome_Produto() . "</A></TD>";
 					
-					echo "<TD>" . $c->getEmail() . "</TD>";
+					echo "<TD>" . $c->getDescricao() . "</TD>";
 					
-					echo "<TD>" . $c->getTelefone() . "</TD>";		
+					echo "<TD>" . $c->getPreco() . "</TD>";		
 					
 					echo "<TD><A href=contato.php?fun=alterar&id=" . 
 					      $c->getId() . "><img src='visao/img/update.png' width='30px'/> 

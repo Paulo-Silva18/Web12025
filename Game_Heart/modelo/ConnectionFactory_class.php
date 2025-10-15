@@ -5,7 +5,7 @@
 		public $host = "localhost";
 		public $user = "root";
 		public $senha = "vertrigo";
-		public $db = "agenda";
+		public $db = "game_heart";
 		public $persistente = false;
 		//Se for persistente a conexão se mantém até que o usuário
 		//pare de se comunicar com o sistema

@@ -9,15 +9,15 @@
 				//formulário enviar foi enviado
 				
 				$c = new Contato();
-				$c->setNome($_POST["nome"]);
-				$c->setEmail($_POST["email"]);
-				$c->setTelefone($_POST["telefone"]);
-				$c->setFoto("qwe");
+				$c->setNome_Produto($_POST["nome_produto"]);
+				$c->setDescricao($_POST["descricao"]);
+				$c->setPreco($_POST["preco"]);
+				$c->setImagem_Url("qwe");
 				
 				$dao = new ContatoDAO();
 				$dao->cadastrar($c);
 				
-				$status = "Cadastro do Contato " . $c->getNome() . 
+				$status = "Cadastro do Contato " . $c->getNome_Produto() . 
 				" efetuado com sucesso";
 				
 				$lista = $dao->listar();

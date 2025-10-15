@@ -18,15 +18,15 @@
 		public function cadastrar($cont){
 			try{
 				$stmt = $this->con->prepare(
-				"INSERT INTO contato(nome, email, telefone, foto)
-				VALUES (:nome, :email, :telefone, :foto)");
+				"INSERT INTO produtos(nome_produto, descricao, preco, imagem_url)
+				VALUES (:nome_produto, :descricao, :preco, :imagem_url)");
 				//:nome - é uma âncora e será ligado pelo bindValue
 				//SQL injection
 				//ligamos as âncoras aos valores de Contato
-				$stmt->bindValue(":nome", $cont->getNome());
-				$stmt->bindValue(":email", $cont->getEmail());
-				$stmt->bindValue(":telefone", $cont->getTelefone());
-				$stmt->bindValue(":foto", "teste");
+				$stmt->bindValue(":nome_produto", $cont->getNome_Produto());
+				$stmt->bindValue(":descricao", $cont->getDescricao());
+				$stmt->bindValue(":preco", $cont->getPreco());
+				$stmt->bindValue(":imagem_url", "teste");
 				
 				$stmt->execute(); //execução do SQL	
 				/*$this->con->close();
@@ -104,9 +104,9 @@
 				//na variável linha (que é um vetor)
 					$c = new Contato();
 					$c->setId($linha["id"]);
-					$c->setNome($linha["nome"]);
-					$c->setTelefone($linha["telefone"]);
-					$c->setEmail($linha["email"]);					
+					$c->setNome_Produto($linha["nome_produto"]);
+					$c->setDescricao($linha["descricao"]);
+					$c->setPreco($linha["preco"]);					
 					$lista[] = $c;
 				}
 				return $lista;	

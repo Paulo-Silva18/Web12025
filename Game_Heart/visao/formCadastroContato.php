@@ -1,16 +1,16 @@
-		<H1> Cadastro Contato </H1>
+		<H1> Cadastro Itens </H1>
 		
 		<FORM action="contato.php?fun=cadastrar" method="POST" 
 		enctype="multipart/form-data">
 			
-			<LABEL for="nome"> Nome: </LABEL> 
-			<INPUT type="text" id="nome" name="nome" /> <br />
+			<LABEL for="nome_produto"> Nome do Produto: </LABEL> 
+			<INPUT type="text" id="nome_produto" name="nome_produto" /> <br />
 			
-			<LABEL for="email"> Email: </LABEL> 
-			<INPUT type="text" id="email" name="email" /> <br />
+			<LABEL for="descricao"> Descrição: </LABEL> 
+			<INPUT type="text" id="descricao" name="descricao" /> <br />
 			
-			<LABEL for="tel"> Telefone: </LABEL> 
-			<INPUT type="text" id="tel" name="telefone" /> <br />
+			<LABEL for="preco"> Preço: </LABEL> 
+			<INPUT type="text" id="preco" name="preco" /> <br />
 			
 			<INPUT type="submit" name="enviar" value="enviar" />
 			

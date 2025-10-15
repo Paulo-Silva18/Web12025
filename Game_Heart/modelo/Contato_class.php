@@ -41,7 +41,7 @@
 		public function getImagem_Url(){
 			return $this->imagem_url;
 		}
-		public function setImagem_Url($foto){
+		public function setImagem_Url($imagem_url){
 			$this->imagem_url = $imagem_url;
 		}
 	}
