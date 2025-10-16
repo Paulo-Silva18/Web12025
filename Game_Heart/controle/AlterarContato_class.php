@@ -8,15 +8,15 @@
 				
 				$c = new Contato();
 				$c->setId($_POST["id"]);
-				$c->setNome($_POST["nome"]);
-				$c->setEmail($_POST["email"]);
-				$c->setTelefone($_POST["telefone"]);
-				$c->setFoto("123");
+				$c->setNome_Produto($_POST["nome_produto"]);
+				$c->setDescricao($_POST["descricao"]);
+				$c->setPreco($_POST["preco"]);
+				$c->setImagem_Url("123");
 				
 				$dao = new ContatoDAO();
 				$dao->alterar($c);
 				
-				$status = "Alteração do Contato " . $c->getNome() . " efetuada com sucesso";
+				$status = "Alteração do Contato " . $c->getNome_Produto() . " efetuada com sucesso";
 				
 				$lista = $dao->listar();
 				

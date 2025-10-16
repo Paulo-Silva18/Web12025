@@ -41,15 +41,15 @@
 		public function alterar($cont){
 			try{
 				$stmt = $this->con->prepare(
-				"UPDATE contato SET nome=:nome, 
-				email = :email, telefone=:telefone, foto=:foto WHERE
+				"UPDATE produtos SET nome_produto=:nome_produto, 
+				descricao=:descricao, preco=:preco, imagem_url=:imagem_url WHERE
 				id=:id");
-				
+					
 				//ligamos as âncoras aos valores de Contato
-				$stmt->bindValue(":nome", $cont->getNome());
-				$stmt->bindValue(":email", $cont->getEmail());
-				$stmt->bindValue(":telefone", $cont->getTelefone());
-				$stmt->bindValue(":foto", $cont->getFoto());
+				$stmt->bindValue(":nome_produto", $cont->getNome_Produto());
+				$stmt->bindValue(":descricao", $cont->getDescricao());
+				$stmt->bindValue(":preco", $cont->getPreco());
+				$stmt->bindValue(":imagem_url", $cont->getImagem_Url());
 				$stmt->bindValue(":id", $cont->getId());
 				
 				$this->con->beginTransaction();
@@ -65,7 +65,7 @@
 		//excluir
 		public function excluir($cont){
 			try{
-				$num = $this->con->exec("DELETE FROM contato WHERE id = " . $cont->getId());
+				$num = $this->con->exec("DELETE FROM produtos WHERE id = " . $cont->getId());
 				//numero de linhas afetadas pelo comando
 				
 				if($num >= 1){
@@ -119,7 +119,7 @@
 		//exibir 
 		public function exibir($id){			
 			try{				
-				$lista = $this->con->query("SELECT * FROM contato WHERE id = " . $id);
+				$lista = $this->con->query("SELECT * FROM produtos WHERE id = " . $id);
 				
 				/*$this->con->close();
 				$this->con = null;*/
@@ -128,10 +128,10 @@
 				
 				$c = new Contato();
 				$c->setId($dado[0]["id"]);
-				$c->setNome($dado[0]["nome"]);
-				$c->setTelefone($dado[0]["telefone"]);
-				$c->setEmail($dado[0]["email"]);
-				$c->setFoto($dado[0]["foto"]);
+				$c->setNome_Produto($dado[0]["nome_produto"]);
+				$c->setDescricao($dado[0]["descricao"]);
+				$c->setPreco($dado[0]["preco"]);
+				$c->setImagem_Url($dado[0]["imagem_url"]);
 				
 				return $c;	
 			}
